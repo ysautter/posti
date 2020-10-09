@@ -18,13 +18,13 @@ EOF
 export user=$user
 sed -i 'NOPASSWD/s/^#//g' /etc/sudoers
 
-cd /home/$user
 
 sudo -i -u $user bash << EOF
 
 echo
 echo "CLONING DOTFILES"
 
+cd /home/$user
 echo ".dotfiles"  >> .gitignore
 
 git clone --bare https://github.com/ysautter/dotfiles $HOME/.dotfiles
