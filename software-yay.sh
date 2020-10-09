@@ -8,23 +8,22 @@ cd "/tmp"
 
 echo "CLONING: YAY"
 
+
 sudo -i -u $user bash << EOF
+
+
+
 git clone https://aur.archlinux.org/yay.git
 cd yay
-makepkg -si
+echo "Y" | makepkg -si
 
-PKGS=(
-    'st-luke-git'
-    'picom-tryone-git'
-    'spotify'
-)
-
-for PKG in "${PKGS[@]}"; do
-    echo "INSTALLING: ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
+yay -S 'st-luke-git' --noconfirm --needed
+yay -S 'picom-tryone-git' --noconfirm --needed
+yay -S 'spotify' --noconfimg --needed
 
 echo
 echo "Done!"
 echo
+bash /home/$user/.vim/plugged/YouCompleteMe/install.sh
+
 EOF
