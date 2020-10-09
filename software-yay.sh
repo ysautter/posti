@@ -8,6 +8,7 @@ cd "/tmp"
 
 echo "CLONING: YAY"
 
+sudo -i -u $user bash << EOF
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -26,3 +27,4 @@ done
 echo
 echo "Done!"
 echo
+EOF

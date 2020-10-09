@@ -15,7 +15,10 @@ $pass
 $pass
 EOF
 
+export user=$user
 sed -i 'NOPASSWD/s/^#//g' /etc/sudoers
+
+cd /home/$user
 
 sudo -i -u $user bash << EOF
 
