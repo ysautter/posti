@@ -16,8 +16,9 @@ $pass
 EOF
 
 export user=$user
-sed -i 'NOPASSWD/s/^#//g' /etc/sudoers
+sed -i '/NOPASSWD/s/^#//g' /etc/sudoers
 
+HOME=/home/$user
 
 sudo -i -u $user bash << EOF
 
@@ -29,17 +30,19 @@ echo ".dotfiles"  >> .gitignore
 
 git clone --bare https://github.com/ysautter/dotfiles $HOME/.dotfiles
 
-alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-
 mkdir -p .config-backup && \
-config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
+/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
 xargs -I{} mv {} .config-backup/{}
 
-config checkout
+/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout
 
-config config --local status.showUntrackedFiles no
+/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME config --local status.showUntrackedFiles no
 
-localectl set-x11-keymap de
+curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+vim +'PlugInstall --sync' +qa
+
+sudo localectl set-x11-keymap de
 
 bash $HOME/.vim/plugged/YouCompleteMe/install.sh
 
