@@ -20,6 +20,7 @@ echo "Y" | makepkg -si
 yay -S 'st-luke-git' --noconfirm --needed
 yay -S 'picom-tryone-git' --noconfirm --needed
 yay -S 'spotify' --noconfimg --needed
+yay -S 'latex-mk' --noconfimg --needed
 
 echo
 echo "Done!"

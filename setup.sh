@@ -18,6 +18,8 @@ current_dir=$(pwd)
 export pass=$pass
 sed -i '/NOPASSWD/s/^#//g' /etc/sudoers
 
+pacman -S base-devel --noconfirm --needed
+
 USER_HOME=/home/$user
 
 sudo -i -u $user bash << EOF

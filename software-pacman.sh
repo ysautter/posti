@@ -11,6 +11,7 @@ PKGS=(
     'alsa-utils'
     'linux-headers'
     'reflector'
+    'xdotool'
 
     # SYSTEM CONTROL
 
@@ -39,6 +40,7 @@ PKGS=(
     'gcc'
     'python'
     'jre-openjdk'
+    'openvpn'
 
     # WEB TOOLS
 
