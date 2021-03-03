@@ -19,6 +19,10 @@ export pass=$pass
 sed -i '/NOPASSWD/s/^#//g' /etc/sudoers
 
 pacman -S base-devel --noconfirm --needed
+# Install yay
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 
 USER_HOME=/home/$user
 
