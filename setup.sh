@@ -20,6 +20,8 @@ sed -i '/NOPASSWD/s/^#//g' /etc/sudoers
 
 pacman -S base-devel --noconfirm --needed
 # Install yay
+echo "CLONING: YAY"
+cd /tmp
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
