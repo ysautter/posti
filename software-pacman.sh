@@ -47,6 +47,7 @@ PKGS=(
     'python'
     'jre-openjdk'
     'openvpn'
+    'base-devel'
 
     # WEB TOOLS
 
