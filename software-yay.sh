@@ -26,7 +26,6 @@ yay -S 'latex-mk' --noconfirm --needed
 echo
 echo "Done!"
 echo
-bash /home/$user/.vim/plugged/YouCompleteMe/install.sh
 
 EOF
 fi

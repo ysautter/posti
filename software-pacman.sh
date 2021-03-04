@@ -14,6 +14,9 @@ PKGS=(
     'reflector'
     'xdotool'
 
+    # UI
+    'picom'
+
     # FONTS
     'ttf-font-awesome'
     'ttf-nerd-fonts-symbols'
