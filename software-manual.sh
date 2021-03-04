@@ -5,5 +5,5 @@ echo
 echo "INSTALLING LUKE SMITH ST"
 git clone https://github.com/LukeSmithxyz/st
 cd st
-sudo make install
+make install
 
