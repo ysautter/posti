@@ -4,6 +4,7 @@ echo
 echo "INSTALLING SOFTWARE"
 echo
 
+pacman -Syy
 PKGS=(
 
     # SYSTEM TOOLS
