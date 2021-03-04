@@ -19,7 +19,6 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
 
-yay -S 'picom-tryone-git' --noconfirm --needed
 yay -S 'spotify' --noconfirm --needed
 yay -S 'latex-mk' --noconfirm --needed
 
