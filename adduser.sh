@@ -19,6 +19,7 @@ export pass=$pass
 sed -i '/NOPASSWD/s/^#//g' /etc/sudoers
 
 USER_HOME=/home/$user
+WALLPAPERS="$USER_HOME/Pictures/Wallpapers"
 
 sudo -i -u $user bash << EOF
 
@@ -31,7 +32,7 @@ echo ".dotfiles"  >> .gitignore
 git clone --bare https://github.com/ysautter/dotfiles $USER_HOME/.dotfiles
 
 mkdir -p .config-backup && \
-/usr/bin/git --git-dir=$USER_HOME/.dotfiles/ --work-tree=$USER_HOME checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
+/usr/bin/git --git-dir=$USER_HOME/.dotfiles/ --work-tree=$USER_HOME checkout 2>&1 | egrep "\s+\." | awk {'"print $1'} | \
 xargs -I{} mv {} .config-backup/{}
 
 /usr/bin/git --git-dir=$USER_HOME/.dotfiles/ --work-tree=$USER_HOME checkout
@@ -43,6 +44,10 @@ curl -fLo $USER_HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubuser
 sudo localectl set-x11-keymap de
 
 vim +'PlugInstall --sync' +qall
+
+mkdir -p $WALLPAPERS
+cd $WALLPAPERS
+wget https://w.wallhaven.cc/full/8o/wallhaven-8ooep1.jpg
 
 EOF
 
