@@ -13,6 +13,11 @@ PKGS=(
     'reflector'
     'xdotool'
 
+    # FONTS
+    'ttf-font-awesome'
+    'ttf-nerd-fonts-symbols'
+    'noto-fonts'
+
     # SYSTEM CONTROL
 
     'pavucontrol'
@@ -59,7 +64,6 @@ PKGS=(
     'rofi'
     'galculator'
     'zathura'
-    'noto-fonts'
 
 )
 
