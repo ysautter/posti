@@ -39,15 +39,15 @@ xargs -I{} mv {} .config-backup/{}
 
 /usr/bin/git --git-dir=$USER_HOME/.dotfiles/ --work-tree=$USER_HOME config --local status.showUntrackedFiles no
 
+mkdir -p $WALLPAPERS
+cd $WALLPAPERS
+wget https://w.wallhaven.cc/full/8o/wallhaven-8ooep1.jpg
+
 curl -fLo $USER_HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 sudo localectl set-x11-keymap de
 
 vim +'PlugInstall --sync' +qall
-
-mkdir -p $WALLPAPERS
-cd $WALLPAPERS
-wget https://w.wallhaven.cc/full/8o/wallhaven-8ooep1.jpg
 
 EOF
 
