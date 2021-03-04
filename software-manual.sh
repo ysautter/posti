@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo
 echo "INSTALLING MANUAL SOFTWARE"
 echo
 echo "INSTALLING LUKE SMITH ST"

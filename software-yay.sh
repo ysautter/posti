@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+echo
 echo "INSTALL YAY? [Y|n]"
 read -s -n 1 install_yay
+echo
 if [ "$install_yay" != "n" ]; then
 sudo -i -u $user bash << EOF
 

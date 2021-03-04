@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
 function install () {
+    echo
+    echo "############################"
     echo -n "$1 [Y|n]"
     read -s -n 1 install
+    echo "############################"
     echo
     if [ "$install" != "n" ]; then
         bash $2
