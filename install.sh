@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 
-bash ./xorg.sh
-bash ./i3.sh
-bash ./software-pacman.sh
-bash ./setup.sh
+function install () {
+    echo -n "$1 [Y|n]"
+    read -s -n install
+    echo
+    if [ "$install" != "n" ]; then
+        bash $2
+    fi
+}
+
+install "INSTALL XORG" ./xorg.sh
+install "INSTALL i3" ./i3.sh
+install "INSTALL SOFTWARE (PACMAN)" ./software-pacman.sh
+install "INSTALL SOFTWARE (MANUAL)" ./software-manual.sh
+install "ADD USER AND DOWNLOAD DOTFILES" ./setup.sh

@@ -49,4 +49,4 @@ vim +'PlugInstall --sync' +qall
 EOF
 
 cd $current_dir
-export user=$user; bash ./additional-software.sh
+export user=$user; bash ./software-yay.sh
