@@ -32,7 +32,7 @@ echo ".dotfiles"  >> .gitignore
 git clone --bare https://github.com/ysautter/dotfiles $USER_HOME/.dotfiles
 
 mkdir -p .config-backup && \
-/usr/bin/git --git-dir=$USER_HOME/.dotfiles/ --work-tree=$USER_HOME checkout 2>&1 | egrep "\s+\." | awk {'"print $1'} | \
+/usr/bin/git --git-dir=$USER_HOME/.dotfiles/ --work-tree=$USER_HOME checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
 xargs -I{} mv {} .config-backup/{}
 
 /usr/bin/git --git-dir=$USER_HOME/.dotfiles/ --work-tree=$USER_HOME checkout
