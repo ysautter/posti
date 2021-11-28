@@ -19,8 +19,8 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
 
-yay -S 'spotify' --noconfirm --needed
 yay -S 'latex-mk' --noconfirm --needed
+yay -S 'polybar' --noconfirm --needed
 
 echo
 echo "Done!"
